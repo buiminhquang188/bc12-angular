@@ -1,0 +1,53 @@
+<p>{{ title }}</p>
+<h3>1. ngIf</h3>
+
+<button *ngIf="!isLoggedIn" class="btn btn-success" (click)="login()">
+  Login
+</button>
+
+<div *ngIf="isLoggedIn" (click)="logout()">
+  <p>Username: {{ username }}</p>
+  <button class="btn btn-danger">Logout</button>
+</div>
+
+<div class="form-group">
+  <label></label>
+  <input type="text" class="form-control" [(ngModel)]="age" />
+</div>
+
+<p *ngIf="age >= 18; else isNotOldEnoughBlock">Đã đủ tuổi</p>
+
+<!-- ng-template: component ảo (tương tự Fragment trong React) -->
+<ng-template #isNotOldEnoughBlock>
+  <p *ngIf="age < 18">Chưa đủ tuổi</p>
+</ng-template>
+
+<br />
+<br />
+
+<h3>2. ngFor</h3>
+<!-- Đặt ngFor trên phần tử muốn lặp lại -->
+<ul class="list-group">
+  <li *ngFor="let rapper of rappers" class="list-group-item">{{ rapper }}</li>
+</ul>
+<!-- Angular không cho phép viết nhiều Structural directive trong một thẻ html -->
+<!-- ng-template không xài được cho Structural Directive, tránh việc dư thẻ -->
+<ng-container *ngIf="rappers.length > 0">
+  <ul class="list-group">
+    <li
+      *ngFor="
+        let rapper of rappers;
+        index as idx;
+        count as length;
+        first as isFirst;
+        last as isLast;
+        even as isEven;
+        odd as isOdd
+      "
+      class="list-group-item"
+    >
+      {{ idx }} - {{ rapper }} - {{ length }} - {{ isFirst }} - {{ isLast }} -
+      {{ isEven }} - {{ isOdd }}
+    </li>
+  </ul>
+</ng-container>
