@@ -11,6 +11,7 @@ export class StructuralComponent implements OnInit {
   username = 'quangb';
   age = 0;
   rappers = ['Đen Vâu', 'Binz', 'Karik', 'Wowy'];
+  selectedColor = 'black';
   login() {
     this.isLoggedIn = true;
   }
@@ -22,4 +23,8 @@ export class StructuralComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {}
+
+  selectColor(color: string) {
+    this.selectedColor = color;
+  }
 }

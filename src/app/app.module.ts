@@ -13,6 +13,13 @@ import { Exercise2Component } from './exercise2/exercise2.component';
 import { BannerComponent } from './exercise2/banner/banner.component';
 import { DataBindingComponent } from './exercise2/data-binding/data-binding.component';
 import { FormsModule } from '@angular/forms';
+import { DirectiveComponent } from './directive/directive.component';
+import { StructuralComponent } from './directive/structural/structural.component';
+import { AttributeComponent } from './directive/attribute/attribute.component';
+import { HightlightDirective } from './my-directives/hightlight.directive';
+import { HoverButtonDirective } from './my-directives/hover-button.directive';
+import { InteractionComponent } from './interaction/interaction.component';
+import { ChildComponent } from './interaction/child/child.component';
 
 // @NgModule: Decorator
 // Các options trong decorator được gọi là metadata
@@ -30,6 +37,13 @@ import { FormsModule } from '@angular/forms';
     Exercise2Component,
     BannerComponent,
     DataBindingComponent,
+    DirectiveComponent,
+    StructuralComponent,
+    AttributeComponent,
+    HightlightDirective,
+    HoverButtonDirective,
+    InteractionComponent,
+    ChildComponent,
   ],
   imports: [
     // Nơi khai báo những module được sử dụng trong module này
