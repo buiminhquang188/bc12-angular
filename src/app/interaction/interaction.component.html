@@ -1,0 +1,12 @@
+<!-- Truyền biến vào app-child component -->
+<!-- Property binding là ngoặc [] -->
+<!-- Event binding là ngoặc () -->
+<app-child
+  [fullName]="fullName"
+  [age]="age"
+  [account]="account"
+  [user]="user"
+  (deleteAccount)="deleteAccount($event)"
+></app-child>
+
+<!-- Custom event, truyền vào deleteAccount khi mà đẩy từ component con lên thì nó sẽ nhận qua cái event này -->

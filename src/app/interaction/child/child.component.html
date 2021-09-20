@@ -1,0 +1,46 @@
+<h2>Thông tin cá nhân</h2>
+<p>Họ tên: {{ myFullName }}</p>
+<p>Tuổi: {{ myAge }}</p>
+
+<h2>Thông tin tài khoản:</h2>
+<p>Username: {{ myAccount.username }}</p>
+<p>Email: {{ myAccount.email }}</p>
+<p>Role: {{ myAccount.role ? "Admin" : "Client" }}</p>
+
+<p>Thông tin người dùng</p>
+<!-- <ul class="list-group">
+  <li *ngFor="let user of myUser" class="list-group-item">
+    <p>Tài Khoản: {{ user.taiKhoan }}</p>
+    <p>Họ Tên: {{ user.hoTen }}</p>
+    <p>Email: {{ user.email }}</p>
+    <p>Số điện thoại: {{ user.soDt }}</p>
+    <p>Mã loại người dùng: {{ user.maLoaiNguoiDung }}</p>
+  </li>
+</ul> -->
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Tài Khoản</th>
+      <th>Họ Tên</th>
+      <th>Email</th>
+      <th>Số điện thoại</th>
+      <th>Mã loại người dùng</th>
+      <th>#</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let user of myUser; index as idx">
+      <td scope="row">{{ idx + 1 }}</td>
+      <td>{{ user.taiKhoan }}</td>
+      <td>{{ user.hoTen }}</td>
+      <td>{{ user.email }}</td>
+      <td>{{ user.soDt }}</td>
+      <td>{{ user.maLoaiNguoiDung }}</td>
+      <td>
+        <button class="btn btn-danger" (click)="deleteAccount(user.id)">Xoá</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
