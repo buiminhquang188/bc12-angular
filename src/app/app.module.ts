@@ -1,7 +1,13 @@
+// Module
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
+import { MatButtonModule } from '@angular/material/button';
+import { MatDividerModule } from '@angular/material/divider';
+import { MatIconModule } from '@angular/material/icon';
+
+// Component
 import { AppComponent } from './app.component';
 import { HelloComponent } from './hello/hello.component';
 import { Exercise1Component } from './exercise1/exercise1.component';
@@ -20,6 +26,13 @@ import { HightlightDirective } from './my-directives/hightlight.directive';
 import { HoverButtonDirective } from './my-directives/hover-button.directive';
 import { InteractionComponent } from './interaction/interaction.component';
 import { ChildComponent } from './interaction/child/child.component';
+import { MaterialComponent } from './material/material.component';
+import { DemoServiceComponent } from './demo-service/demo-service.component';
+import { FirstComponent } from './demo-service/first/first.component';
+import { SecondComponent } from './demo-service/second/second.component';
+import { AccountManagementComponent } from './demo-service/account-management/account-management.component';
+import { AccountListComponent } from './demo-service/account-management/account-list/account-list.component';
+import { AddAccountComponent } from './demo-service/account-management/add-account/add-account.component';
 
 // @NgModule: Decorator
 // Các options trong decorator được gọi là metadata
@@ -44,12 +57,23 @@ import { ChildComponent } from './interaction/child/child.component';
     HoverButtonDirective,
     InteractionComponent,
     ChildComponent,
+    MaterialComponent,
+    DemoServiceComponent,
+    FirstComponent,
+    SecondComponent,
+    AccountManagementComponent,
+    AccountListComponent,
+    AddAccountComponent,
   ],
   imports: [
     // Nơi khai báo những module được sử dụng trong module này
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    BrowserAnimationsModule,
+    MatButtonModule,
+    MatDividerModule,
+    MatIconModule,
   ],
   // Nơi khai báo services
   providers: [],
