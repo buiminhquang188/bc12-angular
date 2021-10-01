@@ -18,7 +18,7 @@ import { FooterComponent } from './exercise2/footer/footer.component';
 import { Exercise2Component } from './exercise2/exercise2.component';
 import { BannerComponent } from './exercise2/banner/banner.component';
 import { DataBindingComponent } from './exercise2/data-binding/data-binding.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DirectiveComponent } from './directive/directive.component';
 import { StructuralComponent } from './directive/structural/structural.component';
 import { AttributeComponent } from './directive/attribute/attribute.component';
@@ -33,6 +33,16 @@ import { SecondComponent } from './demo-service/second/second.component';
 import { AccountManagementComponent } from './demo-service/account-management/account-management.component';
 import { AccountListComponent } from './demo-service/account-management/account-list/account-list.component';
 import { AddAccountComponent } from './demo-service/account-management/add-account/add-account.component';
+import { HomeComponent } from './components/home/home.component';
+import { TheaterComponent } from './components/theater/theater.component';
+import { ReviewComponent } from './components/review/review.component';
+import { ContactComponent } from './components/contact/contact.component';
+import { HttpClientModule } from '@angular/common/http';
+import { MovieDetailComponent } from './components/movie-detail/movie-detail.component';
+import { FormsComponent } from './forms/forms.component';
+import { TemplateDrivenComponent } from './forms/template-driven/template-driven.component';
+import { ReactiveComponent } from './forms/reactive/reactive.component';
+import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 
 // @NgModule: Decorator
 // Các options trong decorator được gọi là metadata
@@ -64,6 +74,15 @@ import { AddAccountComponent } from './demo-service/account-management/add-accou
     AccountManagementComponent,
     AccountListComponent,
     AddAccountComponent,
+    HomeComponent,
+    TheaterComponent,
+    ReviewComponent,
+    ContactComponent,
+    MovieDetailComponent,
+    FormsComponent,
+    TemplateDrivenComponent,
+    ReactiveComponent,
+    PageNotFoundComponent,
   ],
   imports: [
     // Nơi khai báo những module được sử dụng trong module này
@@ -74,6 +93,8 @@ import { AddAccountComponent } from './demo-service/account-management/add-accou
     MatButtonModule,
     MatDividerModule,
     MatIconModule,
+    HttpClientModule,
+    ReactiveFormsModule,
   ],
   // Nơi khai báo services
   providers: [],

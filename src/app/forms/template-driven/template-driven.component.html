@@ -1,0 +1,49 @@
+<div class="container">
+  <h1>Login</h1>
+  <form class="mx-5" #myForm="ngForm" (ngSubmit)="onSubmitForm(myForm.value)">
+    <div class="form-group">
+      <label>Email address</label>
+      <!-- Regular Exp
+          xài pattern = ''
+      -->
+      <input
+        type="email"
+        class="form-control"
+        name="email"
+        ngModel
+        required
+        #email="ngModel"
+        (keyup)="log(email)"
+      />
+      <div
+        class="alert alert-danger"
+        *ngIf="email.errors && (email.touched || email.dirty)"
+      >
+        <div *ngIf="email.errors.required">Vui lòng nhập email</div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label>Password</label>
+      <input
+        type="password"
+        class="form-control"
+        name="password"
+        ngModel
+        required
+        minlength="7"
+        maxlength="12"
+        #password="ngModel"
+      />
+    </div>
+    <div
+      *ngIf="password.errors && (password.touched || password.dirty)"
+      class="alert alert-danger"
+    >
+      <div *ngIf="password.errors.required">Vui lòng nhập mật khẩu</div>
+      <div *ngIf="password.errors.minlength && password.errors.maxlength">
+        ????
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>
